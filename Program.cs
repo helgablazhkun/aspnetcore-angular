@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 
 namespace aspnetcore_angular
 {
@@ -14,10 +9,10 @@ namespace aspnetcore_angular
     {
         public static void Main(string[] args)
         {
-            var config = WebHost.CreateDefaultBuilder(args)
-            .Build();
+            var defaultBuilder = CreateWebHostBuilder(args);
+            //var config = defaultBuilder.Build().Run();
 
-            CreateWebHostBuilder(args).Build().Run();
+            defaultBuilder.Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
